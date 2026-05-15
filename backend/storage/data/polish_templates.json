@@ -1,0 +1,152 @@
+[
+  {
+    "id": "tpl-academic",
+    "key": "academic",
+    "name": "学术论文润色",
+    "label": "学术论文润色",
+    "description": "适用于学术论文、课程研究等正式学术写作场景",
+    "icon": "学",
+    "tone": "icon-blue",
+    "enabled": true,
+    "usageCount": 48,
+    "averageScore": 93,
+    "updatedAt": "2026-05-04",
+    "systemPrompt": "你是一位专业的学术写作润色专家，请对用户提供的文本进行润色。要求如下：\n1. 保持原意，不随意添加或删减关键信息；\n2. 使用正式、客观、严谨的学术语言；\n3. 优化句子结构和段落衔接，提升逻辑性；\n4. 保留专业术语和数据表达；\n5. 避免口语化、主观化和夸张表达。",
+    "terminology": [
+      "学术论文",
+      "课程研究",
+      "开题报告",
+      "毕业论文"
+    ],
+    "forbiddenExpressions": [
+      "???",
+      "??",
+      "???",
+      "???"
+    ]
+  },
+  {
+    "id": "tpl-business",
+    "key": "business",
+    "name": "商务报告优化",
+    "label": "商务报告优化",
+    "description": "适用于工作汇报、项目报告、商业计划书等正式商务文本",
+    "icon": "商",
+    "tone": "icon-green",
+    "enabled": true,
+    "usageCount": 36,
+    "averageScore": 91,
+    "updatedAt": "2024-05-18",
+    "systemPrompt": "请以专业、清晰、结论导向的商务表达风格润色文本，突出重点信息与行动建议。",
+    "terminology": [
+      "工作汇报",
+      "项目报告",
+      "商业计划书",
+      "邮件汇报"
+    ],
+    "forbiddenExpressions": [
+      "???",
+      "??",
+      "????",
+      "????"
+    ]
+  },
+  {
+    "id": "tpl-official",
+    "key": "official",
+    "name": "公文材料润色",
+    "label": "公文材料润色",
+    "description": "适用于通知、通报、请示等公文写作场景",
+    "icon": "公",
+    "tone": "icon-orange",
+    "enabled": true,
+    "usageCount": 26,
+    "averageScore": 89,
+    "updatedAt": "2024-05-15",
+    "systemPrompt": "请使用规范、准确、正式的公文表达方式对文本进行润色，保持信息完整且层次分明。",
+    "terminology": [
+      "通知",
+      "通报",
+      "请示",
+      "总结材料"
+    ],
+    "forbiddenExpressions": [
+      "????",
+      "?????",
+      "?????",
+      "?????"
+    ]
+  },
+  {
+    "id": "tpl-resume",
+    "key": "resume",
+    "name": "简历优化",
+    "label": "简历优化",
+    "description": "突出个人优势，优化简历表达，提升竞争力",
+    "icon": "简",
+    "tone": "icon-purple",
+    "enabled": true,
+    "usageCount": 32,
+    "averageScore": 90,
+    "updatedAt": "2024-05-12",
+    "systemPrompt": "请以简洁、有说服力的求职简历表达方式润色文本，突出成果、能力与个人贡献。",
+    "terminology": [
+      "个人简历",
+      "项目经历",
+      "作品集说明"
+    ],
+    "forbiddenExpressions": [
+      "?????",
+      "??????",
+      "??????"
+    ]
+  },
+  {
+    "id": "tpl-email",
+    "key": "email",
+    "name": "邮件润色",
+    "label": "邮件润色",
+    "description": "优化邮件语言表达，使内容更清晰得体",
+    "icon": "邮",
+    "tone": "icon-teal",
+    "enabled": true,
+    "usageCount": 19,
+    "averageScore": 88,
+    "updatedAt": "2024-05-10",
+    "systemPrompt": "请将文本润色为清晰、礼貌、适合邮件发送的表达方式，突出核心诉求与后续动作。",
+    "terminology": [
+      "工作邮件",
+      "合作沟通",
+      "通知邮件"
+    ],
+    "forbiddenExpressions": [
+      "????",
+      "????",
+      "????"
+    ]
+  },
+  {
+    "id": "tpl-course",
+    "key": "course",
+    "name": "课程论文润色",
+    "label": "课程论文润色",
+    "description": "适用于课程论文、作业等学术性写作",
+    "icon": "课",
+    "tone": "icon-indigo",
+    "enabled": true,
+    "usageCount": 27,
+    "averageScore": 92,
+    "updatedAt": "2024-05-08",
+    "systemPrompt": "请以规范、清晰、适合课程作业提交的风格对文本进行润色，并提升论述的结构性。",
+    "terminology": [
+      "课程论文",
+      "课程报告",
+      "课堂展示稿"
+    ],
+    "forbiddenExpressions": [
+      "???",
+      "???",
+      "????"
+    ]
+  }
+]
