@@ -7,11 +7,13 @@ __pycache__/
 *.py[cod]
 backend/scripts/__pycache__/
 backend/app/__pycache__/
+*.tmp
 
 # Frontend dependencies and build output
 frontend/node_modules/
 frontend/dist/
 frontend/vite-dev.log
+frontend/.vite/
 
 # Runtime storage
 backend/storage/uploads/
@@ -19,7 +21,35 @@ backend/storage/data/batch_processing.json
 
 # Thesis and local working files
 毕业论文工作台/
+毕业论文降AIGC率/
+毕业论文修改工作区/
+ppt图片/
+temp_docx_render/
 .tmp/
+
+# Render and generated images
+database_er_diagram_clean.png
+database_er_diagram_transparent.png
+users_polish_records_fields.png
+系统总体架构图.jpg
+系统总体架构图_透明.png
+数据库实体关系图_透明.png
+批量处理后端流程图_透明.png
+智能润色后端流程图.png
+智能润色后端流程图_透明.png
+backend/scripts/系统主要接口分层关系图.jpg
+*_透明.png
+*_transparent.png
+*_diagram_*.png
+
+# Thesis/document-processing scripts
+backend/scripts/deepseek_replace_red_abstract_docx.py
+backend/scripts/draw_interface_layer_diagram.py
+backend/scripts/extract_thesis_support_materials.py
+backend/scripts/merge_polished_chapters_into_thesis.py
+backend/scripts/polish_thesis_docx.py
+backend/scripts/polish_thesis_from_txt.py
+backend/scripts/remark_thesis_from_aigc_report.py
 
 # Editor and OS files
 .idea/
@@ -27,4 +57,6 @@ backend/storage/data/batch_processing.json
 Thumbs.db
 .DS_Store
 ~$*.docx
+~$*.pptx
+~$*.xlsx
 *.log

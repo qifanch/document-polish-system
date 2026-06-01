@@ -2166,7 +2166,7 @@ def confirm_batch_processing_documents(user_id: int, documents: list[dict[str, A
 
 def record_batch_processing_export(user_id: int, documents: list[dict[str, Any]]) -> dict[str, Any]:
     if not documents:
-        raise ValueError("????????????????")
+        raise ValueError("请选择需要导出的批量文档。")
 
     exported_documents: list[dict[str, Any]] = []
     invalid_documents: list[dict[str, str]] = []
@@ -2174,26 +2174,26 @@ def record_batch_processing_export(user_id: int, documents: list[dict[str, Any]]
     for item in documents:
         document_id = str(item.get("documentId") or "").strip()
         if not document_id:
-            invalid_documents.append({"documentId": "", "error": "???????"})
+            invalid_documents.append({"documentId": "", "error": "缺少文档标识。"})
             continue
 
         try:
             document = get_batch_document_from_database(int(user_id), document_id)
         except KeyError:
-            invalid_documents.append({"documentId": document_id, "error": "??????"})
+            invalid_documents.append({"documentId": document_id, "error": "文档不存在。"})
             continue
 
         exported_documents.append(
             {
                 "documentId": document_id,
-                "title": str(document.get("title") or "?????"),
+                "title": str(document.get("title") or "未命名文档"),
                 "filename": str(item.get("filename") or "").strip()
                 or str(document.get("originalFilename") or document.get("title") or "batch-result"),
             }
         )
 
     if not exported_documents:
-        raise ValueError("???????????")
+        raise ValueError("没有可导出的批量文档。")
 
     activity = create_batch_activity_in_database(
         int(user_id),

@@ -843,7 +843,7 @@ function validateBatchPolishDocuments(targetDocuments) {
 
   const completedDocument = targetDocuments.find((document) => document.status === 'completed')
   if (completedDocument) {
-    return `宸茬‘璁ょ殑鏂囨。涓嶅彲鍐嶆娑﹁壊锛?{completedDocument.title}`
+    return `已确认的文档不可再次润色：${completedDocument.title}`
   }
 
   const pdfDocument = targetDocuments.find((document) => document.fileType === 'PDF')
@@ -884,14 +884,14 @@ function formatBatchConfirmMessage(result) {
   if (processed && failed) {
     const firstError = result?.errors?.[0]?.error
     return firstError
-      ? `宸茬‘璁?${processed} 涓枃浠讹紝${failed} 涓け璐ワ細${firstError}`
-      : `宸茬‘璁?${processed} 涓枃浠讹紝${failed} 涓け璐ャ€?`
+      ? `已确认 ${processed} 个文件，${failed} 个失败：${firstError}`
+      : `已确认 ${processed} 个文件，${failed} 个失败。`
   }
   if (processed) {
-    return `宸茬‘璁?${processed} 涓枃浠躲€?`
+    return `已确认 ${processed} 个文件。`
   }
   const firstError = result?.errors?.[0]?.error
-  return firstError ? `鎵归噺纭澶辫触锛?{firstError}` : '鎵归噺纭澶辫触锛岃绋嶅悗閲嶈瘯銆?'
+  return firstError ? `批量确认失败：${firstError}` : '批量确认失败，请稍后重试。'
 }
 
 function getConfirmableDocuments(targetDocuments) {
@@ -1062,7 +1062,7 @@ async function polishDocuments(targetDocuments) {
 async function confirmDocuments(targetDocuments, options = {}) {
   const confirmableDocuments = getConfirmableDocuments(targetDocuments)
   if (!confirmableDocuments.length) {
-    batchActionMessage.value = '璇峰厛閫夋嫨寰呯‘璁ょ殑鏂囨。銆?'
+    batchActionMessage.value = '请先选择待确认的文档。'
     closeAllMenus()
     return false
   }
@@ -1094,7 +1094,7 @@ async function confirmDocuments(targetDocuments, options = {}) {
     }
     return true
   } catch (err) {
-    batchActionMessage.value = err.message || '鎵归噺纭澶辫触锛岃绋嶅悗閲嶈瘯銆?'
+    batchActionMessage.value = err.message || '批量确认失败，请稍后重试。'
     return false
   } finally {
     polishingBatch.value = false

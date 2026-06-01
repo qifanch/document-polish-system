@@ -317,9 +317,10 @@ async function toggleNotification(item, field) {
       key: notification.key,
       emailEnabled: Boolean(notification.emailEnabled),
     }))
+    const updatedNotifications = await updateSettingsNotifications(notificationPayload)
     settings.value = {
       ...settings.value,
-      notifications: await updateSettingsNotifications(notificationPayload),
+      notifications: normalizeNotifications(updatedNotifications),
     }
     setNotice('通知设置已更新')
   } catch (err) {
